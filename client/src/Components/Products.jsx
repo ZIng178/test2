@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { popularProducts } from "../data";
+import { popularProducts } from "../data.js";
 import Product from "./Product";
 import axios from "axios";
 
@@ -19,9 +19,9 @@ const Products = ({ cat, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          cat
-            ? `http://localhost:5000/api/products?category=${cat}`
-            : "http://localhost:5000/api/products"
+          // cat
+          //   ? `http://localhost:5000/api/products?category=${cat}`
+          "http://localhost:5000/api/products"
         );
         setProducts(res.data);
       } catch (err) {
