@@ -4,6 +4,7 @@ import { logout } from "../redux/userRedux";
 import { useDispatch, useSelector } from "react-redux";
 import { mobile } from "../responsive";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -66,10 +67,11 @@ const Logout = () => {
     <Container>
       <Wrapper>
         <Title>YOU ARE LOGGED OUT </Title>
-
-        <Button onClick={handleClick} disabled={isFetching}>
-          Login
-        </Button>
+        <Link to="/">
+          <Button onClick={handleClick} disabled={isFetching}>
+            Login
+          </Button>
+        </Link>
       </Wrapper>
     </Container>
   );
