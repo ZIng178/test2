@@ -3,7 +3,7 @@ import React from "react";
 import { mobile } from "../responsive";
 const Container = styled.div`
   height: 30px;
-  background-color: teal;
+  background-color: black;
   color: white;
   display: flex;
   align-items: center;

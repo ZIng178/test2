@@ -1,21 +1,25 @@
+import image1 from "./images/image1.png";
+import image2 from "./images/image2.png";
+import image3s from "./images/image3s.png";
+
 export const sliderItems = [
   {
     id: 1,
-    img: "https://i.ibb.co/cXFnLLV/3.png",
+    img: image1,
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
   },
   {
     id: 2,
-    img: "https://i.ibb.co/DG69bQ4/2.png",
+    img: image2,
     title: "AUTUMN COLLECTION",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fcf1ed",
   },
   {
     id: 3,
-    img: "https://i.ibb.co/cXFnLLV/3.png",
+    img: image3s,
     title: "LOUNGEWEAR LOVE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fbf0f4",
@@ -25,7 +29,7 @@ export const sliderItems = [
 export const categories = [
   {
     id: 1,
-    img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    img: "https://images.pexels.com/photos/1232459/pexels-photo-1232459.jpeg?cs=srgb&dl=pexels-salah-amrani-1232459.jpg&fm=jpg",
     title: "SHIRT STYLE!",
     cat: "women",
   },
@@ -37,7 +41,7 @@ export const categories = [
   },
   {
     id: 3,
-    img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    img: "https://images.pexels.com/photos/9286135/pexels-photo-9286135.png?cs=srgb&dl=pexels-thuso-takhwiri-9286135.jpg&fm=jpg",
     title: "LIGHT JACKETS",
     cat: "jacket",
   },

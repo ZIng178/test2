@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Announcements from "../Components/Announcements";
 import Footer from "../Components/Footer";
@@ -7,6 +7,7 @@ import NewsLetter from "../Components/NewsLetter";
 import Products from "../Components/Products";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
+import Product from "../Components/Product";
 
 const Container = styled.div``;
 const Title = styled.div`
@@ -42,6 +43,7 @@ const ProductList = () => {
   const [filters, setFilter] = useState({});
   const [sort, setSort] = useState({});
 
+  console.log("filters", filters);
   const handleFilters = (e) => {
     const value = e.target.value;
     setFilter({
@@ -80,9 +82,17 @@ const ProductList = () => {
         <Filter>
           <FilterText> Sort Products:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>
-            <Option value="newest">Newest</Option>
-            <Option value="asc"> Price(asc)</Option>
-            <Option value="desc"> Price(desc)</Option>
+            <Option name="newest" value="newest">
+              Newest
+            </Option>
+            <Option name="asc" value="asc">
+              {" "}
+              Price(asc)
+            </Option>
+            <Option name="desc" value="desc">
+              {" "}
+              Price(desc)
+            </Option>
           </Select>
         </Filter>
       </FilterContainer>

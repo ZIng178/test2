@@ -17,7 +17,7 @@ const Home = () => {
       <Navbar />
       <Slider />
       <Categories />
-      <Products />
+      {/* <Products /> */}
       <NewsLetter />
       <Footer />
     </Container>

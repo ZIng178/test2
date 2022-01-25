@@ -6,6 +6,7 @@ import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Login from "../Pages/Login";
+import logo1 from "../images/logo.png";
 
 const Container = styled.div`
   height: 60px;
@@ -65,6 +66,7 @@ const Right = styled.div`
 `;
 
 const MenuItem = styled.div`
+  color: black;
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
@@ -87,7 +89,7 @@ const Navbar = () => {
         </Left>
         <Center>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <Logo>MYTHIC</Logo>
+            <Logo>{<img src={logo1} />}</Logo>
           </Link>
         </Center>
         <Right>

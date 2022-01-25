@@ -5,8 +5,10 @@ import Navbar from "../Components/Navbar";
 import styled from "styled-components";
 import { Add, Remove } from "@material-ui/icons";
 import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteProduct } from "../redux/cartRedux";
 import StripeCheckout from "react-stripe-checkout";
+import { Link } from "react-router-dom";
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div``;
@@ -157,11 +159,17 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
+  console.log("cart", cart);
 
   const onToken = (token) => {
     setStripeToken(token);
+  };
+
+  const handleDelete = () => {
+    dispatch(deleteProduct());
   };
 
   console.log("stripetojen", stripeToken);
@@ -172,10 +180,12 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <Link to={`/products/${cart.products}`}>
+            <TopButton>CONTINUE SHOPPING</TopButton>
+          </Link>
           <TopTexts>
-            <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
+            <TopText>Shopping Bag</TopText>
+            <TopText>Your Wishlist </TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
@@ -196,6 +206,7 @@ const Cart = () => {
                     <ProductSize>
                       <b>Size:</b> {product.size}
                     </ProductSize>
+                    <Button onClick={handleDelete}> Remove </Button>
                   </Details>
                 </ProductDetail>
                 <PriceDetail>

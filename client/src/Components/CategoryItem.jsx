@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import Products from "./Products";
 
 const Container = styled.div`
   flex: 1;
@@ -39,6 +40,10 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
+const handleClick = () => {
+  return <Products />;
+};
+
 const CategoryItem = ({ item }) => {
   return (
     <Container>
@@ -46,7 +51,14 @@ const CategoryItem = ({ item }) => {
         <Image src={item.img} />
         <Info>
           <Title> {item.title}</Title>
-          <Button> SHOP NOW </Button>
+          <Button
+            onClick={() => {
+              handleClick();
+            }}
+          >
+            {" "}
+            SHOP NOW{" "}
+          </Button>
         </Info>
       </Link>
     </Container>
