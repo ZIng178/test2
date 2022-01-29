@@ -21,6 +21,8 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   font-weight: 300;
   text-align: center;
+  position: relative;
+  top: 25px;
 `;
 
 const Top = styled.div`
@@ -175,12 +177,13 @@ const Cart = () => {
   console.log("stripetojen", stripeToken);
   return (
     <Container>
-      <Navbar />
       <Announcements />
+      <Navbar />
+
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <Link to={`/products/${cart.products}`}>
+          <Link to={`/products/jacket`}>
             <TopButton>CONTINUE SHOPPING</TopButton>
           </Link>
           <TopTexts>

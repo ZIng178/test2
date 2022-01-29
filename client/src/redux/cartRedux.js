@@ -1,3 +1,4 @@
+import { Satellite } from "@material-ui/icons";
 import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
@@ -16,6 +17,7 @@ const cartSlice = createSlice({
     deleteProduct: (state, action) => {
       state.quantity -= 1;
       state.products.pop(action.payload);
+      state.total -= state.total;
     },
   },
 });
