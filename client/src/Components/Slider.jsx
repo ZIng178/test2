@@ -118,7 +118,7 @@ const Slider = () => {
                 }}
               >
                 {" "}
-                Shop Now!
+                Shop Now
               </Button>
             </InfoContainer>
           </Slide>
