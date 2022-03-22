@@ -2,11 +2,11 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import Badge from "@material-ui/core/Badge";
 import React from "react";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile, tablet } from "../responsive";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Login from "../Pages/Login";
-import logo1 from "../images/logo.png";
+import logo1 from "../images/logo1.png";
 
 const Container = styled.div`
   height: 60px;
@@ -55,7 +55,10 @@ const Logo = styled.h1`
   font-size: 50px;
   text-align: center;
   text-decoration: none;
-  ${mobile({ fontSize: "20px" })};
+  position: relative;
+  bottom: 15px;
+  ${mobile({ postion: "relative", bottom: "70px" })};
+  ${tablet({ postion: "relative", bottom: "70px" })};
 `;
 const Right = styled.div`
   flex: 1;
@@ -70,6 +73,7 @@ const MenuItem = styled.div`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  margin-top: 30px;
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -94,7 +98,7 @@ const Navbar = () => {
         </Center>
         <Right>
           <Link to="/register" style={{ textDecoration: "none" }}>
-            <MenuItem> REGISTER</MenuItem>
+            <MenuItem> REGISTER</MenuItem>{" "}
           </Link>
           {!user && (
             <Link to="/login" style={{ textDecoration: "none" }}>

@@ -19,7 +19,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 19px;
 `;
 
 const Logo = styled.h1``;

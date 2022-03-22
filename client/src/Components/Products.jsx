@@ -17,10 +17,12 @@ const Products = ({ cat, filters, sort }) => {
 
   console.log("cater", cat);
 
+  const axiosInstance = axios.create({ baseUrl: process.env.REACT_APP_URL });
+
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get(
+        const res = await axiosInstance.get(
           // cat
           //   ? `http://localhost:5000/api/products?category=${cat}`
           "http://localhost:5000/api/products"

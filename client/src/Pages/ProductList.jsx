@@ -13,9 +13,12 @@ const Container = styled.div``;
 const Title = styled.div`
   margin: 20px;
 `;
+
 const FilterContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 70px;
+  ${mobile({ marginTop: "85px" })}
 `;
 const Filter = styled.div`
   margin: 20px;
@@ -54,9 +57,10 @@ const ProductList = () => {
 
   return (
     <Container>
-      <Navbar />
       <Announcements />
-      <Title> {cat}</Title>
+      <Navbar />
+
+      <Title> </Title>
       <FilterContainer>
         <Filter>
           <FilterText> Filter Products:</FilterText>

@@ -14,6 +14,7 @@ import ProductList from "./Pages/ProductList";
 import Register from "./Pages/Register";
 import { useSelector } from "react-redux";
 import Logout from "./Pages/Logout";
+import login from "./Pages/Login";
 
 function App() {
   const user = useSelector((state) => state.user.currentUser);
@@ -34,7 +35,9 @@ function App() {
           <Cart />
         </Route>
 
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+        <Route path="/login">
+          {user ? <Redirect to="/login" /> : <Login />}
+        </Route>
 
         <Route path="/register">
           {!user ? <Redirect to="/register" /> : <Register />}

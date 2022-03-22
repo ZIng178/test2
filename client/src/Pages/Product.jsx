@@ -24,13 +24,15 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 90vh;
-  object-fit: cover;
+
   ${mobile({ height: "40vh" })}
+  margin-top:35px;
 `;
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
   ${mobile({ padding: "10px" })}
+  margin-top:35px;
 `;
 const Title = styled.h1`
   font-weight: 200;
@@ -140,8 +142,9 @@ const Product = () => {
   };
   return (
     <Container>
-      <Navbar />
       <Announcements />
+      <Navbar />
+
       <Wrapper>
         <ImgContainer>
           <Image src={product.img} />
