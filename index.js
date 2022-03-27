@@ -10,6 +10,7 @@ const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 const path = require("path");
+const { JWT_SECRET, MONGO_URI } = require("./config/keys");
 
 const corsOptions = {
   origin: "*",
@@ -20,7 +21,7 @@ const corsOptions = {
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(MONGO_URI)
   .then(() => console.log("DBConnection Successful"))
   .catch((err) => {
     console.log(err);
@@ -41,9 +42,13 @@ app.use("/api/checkout", stripeRoute);
 // app.use(express.static(path.join(__dirname, "../client/build")));
 
 // app.use(express.static("public"));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
-});
+
+if (process.env.NODE_ENV == "production") {
+  app.get("/", (req, res) => {
+    app.use(express.static(path.resolve(__dirname, "client", "build")));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running ");
